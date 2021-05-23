@@ -1,3 +1,3 @@
 module.exports = {
-  publicPath: '/rpm-m-per-s'
+  publicPath: '/play-first'
 }

@@ -1,9 +1,7 @@
 import Button from './Button'
-import Banner from './Banner'
-import Input from './Input'
+import GameSelector from './GameSelector'
 
 export {
     Button, 
-    Banner,
-    Input,
+    GameSelector,
 }

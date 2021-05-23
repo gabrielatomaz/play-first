@@ -1,4 +1,4 @@
-# rpm-m-per-s
+# Play FIRST
 
 ## Application
 Simple Vue App that calculates RPM to m/s and m/s to RPM using the wheel size.
