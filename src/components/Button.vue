@@ -1,9 +1,8 @@
 <template>
         <button 
-            class="button is-outlined is-fullwidth is-dark"
+            :class="['button', 'is-outlined', isFullWidth, isLoading]"
             @click="event"
-            v-html="text"
-            :disabled="disabled"
+            v-html="text || hasIcon"
         />
 </template>
 
@@ -19,10 +18,31 @@ export default {
             type: Function,
             required: true,
         },
-        disabled: {
+        loading: {
             type: Boolean,
             default: false,
-        }
+        },
+        icon: {
+            type: String,
+        },
+        fullWidth: {
+            type: Boolean,
+            default: true,
+        },
+    },
+    computed: {
+        isLoading() {
+            return this.loading ? 'is-loading' : ''
+        },
+        isFullWidth() {
+            return this.fullWidth ? 'is-fullwidth' : ''
+        },
+        hasIcon() {
+            return this.icon ? `<i class="fas fa-${this.icon}"></i>` : ''
+        },
     },
 }
 </script>
+
+<style>
+</style>
