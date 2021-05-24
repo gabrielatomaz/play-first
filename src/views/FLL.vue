@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <Board :name="`fll-${board || defaultBoard.number}`" :options="defaultBoard.options" @board="setBoard" />
+  <div>}
+    <Board :name="`fll-${board || defaultBoard.number}`" :options="getOptions" @board="setBoard" />
   </div>
 </template>
 
@@ -17,11 +17,15 @@ export default {
       defaultBoard() {
         return this.boards[0]
       },
+
+      getOptions() {
+        return this.boards.find(board => board.number === this.board).options
+      },
     },
 
     data() {
       return {
-        board: null,
+        board: 1,
         boards: [
           {
             number: 1,
@@ -60,6 +64,45 @@ export default {
               },
             },
           ] 
+        },
+
+        {
+            number: 2,
+            options: [
+            {
+              number: 1,
+              button: {
+                text: 'Girar 90º',
+                event: () => { this.toggle(2, 1) },
+                solution: {
+                  visible: false,
+                  board: 2,
+                }
+              },
+            },
+            {
+              number: 2,
+              button: {
+                text: 'Andar 3 casas',
+                event: () => { this.toggle(2, 2) },
+                solution: {
+                  visible: false,
+                  board: 3,
+                }
+              },
+            },
+            {
+              number: 3,
+              button: {
+                text: 'Girar 120º',
+                event: () => { this.toggle(2, 3) },
+                solution: {
+                  visible: false,
+                  board: 4,
+                },  
+              },
+            },
+          ] 
         }
       ],
     }
@@ -74,7 +117,7 @@ export default {
 
       setBoard(board) {
         this.board = board
-      }
+      },
     }
 }
 </script>
