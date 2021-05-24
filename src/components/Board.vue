@@ -13,7 +13,7 @@
             <div class="columns">
                 <div class="column" v-for="{ number, button } in options" :key="number">
                     <Card>
-                        <Button :text="button.text" :event="button.event" />
+                        <Button :text="button.text" :event="() => buttonToggle(button)" />
                         <div class="p-2 mb-5" v-if="button.solution.visible"> 
                             <figure>
                                 <img :src="getSrc(number)" alt="Tabuleiro">
@@ -68,6 +68,10 @@ export default {
         setOption(board) {
             this.$emit('board', board)
         },
+
+        buttonToggle(button) {
+            button.solution.visible = !button.solution.visible
+        }
     }
 }
 </script>

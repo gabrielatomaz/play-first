@@ -34,7 +34,6 @@ export default {
               number: 1,
               button: {
                 text: 'Andar 3 casas',
-                event: () => { this.toggle(1, 1) },
                 solution: {
                   visible: false,
                   board: 2,
@@ -45,7 +44,6 @@ export default {
               number: 2,
               button: {
                 text: 'Andar -3 casas',
-                event: () => { this.toggle(1, 2) },
                 solution: {
                   visible: false,
                   board: 3,
@@ -56,7 +54,6 @@ export default {
               number: 3,
               button: {
                 text: 'Girar 90º',
-                event: () => { this.toggle(1, 3) },
                 solution: {
                   visible: false,
                   board: 4,
@@ -73,7 +70,6 @@ export default {
               number: 1,
               button: {
                 text: 'Girar 90º',
-                event: () => { this.toggle(2, 1) },
                 solution: {
                   visible: false,
                   board: 2,
@@ -84,7 +80,6 @@ export default {
               number: 2,
               button: {
                 text: 'Andar 3 casas',
-                event: () => { this.toggle(2, 2) },
                 solution: {
                   visible: false,
                   board: 3,
@@ -95,7 +90,6 @@ export default {
               number: 3,
               button: {
                 text: 'Girar 120º',
-                event: () => { this.toggle(2, 3) },
                 solution: {
                   visible: false,
                   board: 4,
@@ -109,12 +103,6 @@ export default {
   },
 
     methods: {
-      toggle(boardNumber, optionNumber) {
-        let solution = this.boards.find(board => board.number === boardNumber)
-          .options.find(option => option.number === optionNumber).button.solution
-        solution.visible = !solution.visible;
-      },
-
       setBoard(board) {
         this.board = board
       },
