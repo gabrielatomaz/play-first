@@ -15,6 +15,7 @@
 
 <script>
 import { Button } from './'
+import { fll, frc } from '../mock'
 export default {
     name: "GameSelector",
 
@@ -24,24 +25,7 @@ export default {
 
     data() {
         return {
-            games: [
-                {
-                    name: 'FLL',
-                    src: require('../assets/fll.png'),
-                    alt: 'Robô de FLL',
-                    button: {
-                        text: 'Jogar FLL',
-                    }
-                },
-                {
-                    name: 'FRC',
-                    src: require('../assets/frc.png'),
-                    alt: 'Robô de FRC',
-                    button: {
-                        text: 'Jogar FRC',
-                    }
-                },
-            ]
+            games: [ fll, frc ],
         }
     },
 

@@ -39,7 +39,8 @@ export default {
     name: 'Board',
 
     props: {
-        name: String,
+        game: String,
+        board: Number,
         options: Array,
     },
 
@@ -49,20 +50,20 @@ export default {
     },
 
     watch: {
-        name(newName) {
-            this.src = require(`../assets/${newName}.jpg`)
+        board(newBoard) {
+            this.src = require(`../assets/${this.game}/boards/${newBoard}/board.jpg`)
         },
     },
 
     data() {
         return {
-            src: require(`../assets/${this.name}.jpg`),
+            src: require(`../assets/${this.game}/boards/${this.board}/board.jpg`),
         }
     },
 
     methods: {
         getSrc(number) {
-            return require(`../assets/${this.name}-option-${number}.jpeg`)
+            return require(`../assets/${this.game}/boards/${this.board}/options/${number}.jpeg`)
         },
 
         setOption(board) {
@@ -70,7 +71,8 @@ export default {
         },
 
         buttonToggle(button) {
-            button.solution.visible = !button.solution.visible
+            let { solution } = button
+            solution.visible = !solution.visible
         }
     }
 }

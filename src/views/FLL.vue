@@ -1,11 +1,12 @@
 <template>
-  <div>}
-    <Board :name="`fll-${board || defaultBoard.number}`" :options="getOptions" @board="setBoard" />
+  <div>
+    <Board game="fll" :board="board.number" :options="options" @board="setBoard" />
   </div>
 </template>
 
 <script>
 import { Board } from '../components/'
+import { fll_board_1 , fll_board_2, fll_board_3 } from '../mock/'
 export default {
     name: 'FLL',
 
@@ -14,97 +15,27 @@ export default {
     },
 
     computed: {
-      defaultBoard() {
-        return this.boards[0]
-      },
+      options() {
+        const { options } = this.board
 
-      getOptions() {
-        return this.boards.find(board => board.number === this.board).options
+        return options
       },
     },
 
     data() {
       return {
-        board: 1,
+        board: fll_board_1,
         boards: [
-          {
-            number: 1,
-            options: [
-            {
-              number: 1,
-              button: {
-                text: 'Andar 3 casas',
-                solution: {
-                  visible: false,
-                  board: 2,
-                }
-              },
-            },
-            {
-              number: 2,
-              button: {
-                text: 'Andar -3 casas',
-                solution: {
-                  visible: false,
-                  board: 3,
-                }
-              },
-            },
-            {
-              number: 3,
-              button: {
-                text: 'Girar 90º',
-                solution: {
-                  visible: false,
-                  board: 4,
-                },  
-              },
-            },
-          ] 
-        },
-
-        {
-            number: 2,
-            options: [
-            {
-              number: 1,
-              button: {
-                text: 'Girar 90º',
-                solution: {
-                  visible: false,
-                  board: 2,
-                }
-              },
-            },
-            {
-              number: 2,
-              button: {
-                text: 'Andar 3 casas',
-                solution: {
-                  visible: false,
-                  board: 3,
-                }
-              },
-            },
-            {
-              number: 3,
-              button: {
-                text: 'Girar 120º',
-                solution: {
-                  visible: false,
-                  board: 4,
-                },  
-              },
-            },
-          ] 
-        }
-      ],
-    }
-  },
+          fll_board_1,
+          fll_board_2,
+          fll_board_3,
+        ],
+      }
+    },
 
     methods: {
-      setBoard(board) {
-        this.board = board
+      setBoard(number) {
+        this.board = this.boards.find(board => board.number === number)
       },
     }
 }
