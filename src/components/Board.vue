@@ -16,7 +16,7 @@
                         <Button :text="button.text" :event="() => buttonToggle(button)" />
                         <div class="p-2 mb-5" v-if="button.solution.visible"> 
                             <figure>
-                                <img :src="getSrc(number)" alt="Tabuleiro">
+                                <img :src="getOptionSrc(number)" :alt="`Opção ${number}`">
                             </figure>
                             <Button 
                                 :fullWidth="false" 
@@ -62,7 +62,7 @@ export default {
     },
 
     methods: {
-        getSrc(number) {
+        getOptionSrc(number) {
             return require(`../assets/${this.game}/boards/${this.board}/options/${number}.jpeg`)
         },
 

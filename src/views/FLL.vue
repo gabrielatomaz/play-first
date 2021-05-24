@@ -6,7 +6,12 @@
 
 <script>
 import { Board } from '../components/'
-import { fll_board_1 , fll_board_2, fll_board_3 } from '../mock/'
+import { 
+  fll_board_1, 
+  fll_board_2, 
+  fll_board_3 
+} from '../mock/'
+
 export default {
     name: 'FLL',
 

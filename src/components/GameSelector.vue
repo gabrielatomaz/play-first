@@ -3,7 +3,7 @@
         <div class="container" id="selector">
             <div class="columns is-centered">
                 <div class="column is-half" v-for="{ src, alt, name, button } in games" :key="name">
-                    <figure class="image is-4by5">
+                    <figure class="image is-square">
                         <img :src="src" :alt="alt">
                     </figure>
                     <Button :text="button.text" :event="() => goTo(`/${name}`)" />
@@ -43,4 +43,5 @@ export default {
     max-width: 700px !important;
     margin-top: 10vh;
 }
+
 </style>
