@@ -1,12 +1,9 @@
 # Play FIRST
 
 ## Application
-Simple Vue App that calculates RPM to m/s and m/s to RPM using the wheel size.
+A fun game to teach the basic of FLL programming blocks and FRC programming in Java using WPILib.
 
-## View
-
-![alt text](https://i.imgur.com/pVQgpiu.png)
-
+You can play at: https://gabrielatomaz.github.io/play-first/
 
 ## Project setup
 ```
