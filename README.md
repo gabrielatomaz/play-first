@@ -1,7 +1,7 @@
 # Play FIRST
 
 ## Application
-A fun game to teach the basic of FLL programming blocks and FRC programming in Java using WPILib.
+A fun game to teach FLL and FRC programming basics.
 
 You can play at: https://gabrielatomaz.github.io/play-first/
 
