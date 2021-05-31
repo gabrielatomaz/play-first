@@ -51,13 +51,13 @@ export default {
 
     watch: {
         board(newBoard) {
-            this.src = require(`../assets/${this.game}/boards/${newBoard}/board.jpg`)
+            this.src = require(`../assets/${this.game}/boards/${newBoard}/board.png`)
         },
     },
 
     data() {
         return {
-            src: require(`../assets/${this.game}/boards/${this.board}/board.jpg`),
+            src: require(`../assets/${this.game}/boards/${this.board}/board.png`),
         }
     },
 
